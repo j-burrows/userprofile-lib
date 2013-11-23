@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{89F4A517-667F-434B-8498-549EDA04FFB2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UserProfileLib</RootNamespace>
+    <AssemblyName>Profile</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Repository">
+      <HintPath>..\..\Repository5\Repository\bin\Release\Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\Avatar.cs" />
+    <Compile Include="Base\Blocked_User.cs" />
+    <Compile Include="Base\Friended_User.cs" />
+    <Compile Include="Base\User_Profile.cs" />
+    <Compile Include="Business\BAvatar.cs" />
+    <Compile Include="Business\BBlocked_User.cs" />
+    <Compile Include="Business\BFriended_User.cs" />
+    <Compile Include="Business\BUser_Profile.cs" />
+    <Compile Include="Data\Entities\DAvatar.cs" />
+    <Compile Include="Data\Entities\DBlocked_User.cs" />
+    <Compile Include="Data\Entities\DFriended_User.cs" />
+    <Compile Include="Data\Entities\DUser_Profile.cs" />
+    <Compile Include="Data\Repositories\SqlSAvatarRepository.cs" />
+    <Compile Include="Data\Repositories\SqlSBlocked_UserRepository.cs" />
+    <Compile Include="Data\Repositories\SqlSFriended_UserRepository.cs" />
+    <Compile Include="Data\Repositories\SqlSUser_ProfileRepository.cs" />
+    <Compile Include="Factory\RepositoryFactory.cs" />
+    <Compile Include="Factory\SqlSRepositoryFactory.cs" />
+    <Compile Include="IProfileService.cs" />
+    <Compile Include="Presentation\PAvatar.cs" />
+    <Compile Include="Presentation\PBlocked_User.cs" />
+    <Compile Include="Presentation\PFriended_User.cs" />
+    <Compile Include="Presentation\PUser_Profile.cs" />
+    <Compile Include="ProfileService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
